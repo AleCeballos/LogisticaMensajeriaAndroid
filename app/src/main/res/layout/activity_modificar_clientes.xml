@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Clientes">
+    tools:context=".ModificarClientes">
 
     <TextView
         android:id="@+id/textView2"
@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/btnModificarClientes"
@@ -109,10 +109,21 @@
         android:id="@+id/btnModificarClientes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="172dp"
-        android:text="Guardar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="64dp"
+        android:text="Modificar"
+        app:layout_constraintBottom_toTopOf="@+id/btnEliminarClientes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnEliminarClientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginBottom="56dp"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

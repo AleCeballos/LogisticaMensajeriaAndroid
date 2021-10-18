@@ -27,16 +27,14 @@ public class Clientes extends AppCompatActivity {
         etNombreClientes = (EditText) findViewById(R.id.etNombreClientes);
         etCuitClientes = (EditText) findViewById(R.id.etCuitClientes);
         etDireccionClientes = (EditText) findViewById(R.id.etDireccionClientes);
-        etAltaClientes = (EditText) findViewById(R.id.etAltaClientes);
         etTelefonoClientes = (EditText) findViewById(R.id.etTelefonoClientes);
-
-        btnGuardarClientes = (Button) findViewById(R.id.btnGuardarClientes);
+        btnGuardarClientes = (Button) findViewById(R.id.btnModificarClientes);
 
         //------------------EJECUTO METODO PARA GUARDAR A TRAVES DE BOTON-----------------------------//
         btnGuardarClientes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardar(etNombreClientes.getText().toString(), etCuitClientes.getText().toString(),etDireccionClientes.getText().toString(),etAltaClientes.getText().toString(),etTelefonoClientes.getText().toString());
+                guardar(etNombreClientes.getText().toString(), etCuitClientes.getText().toString(),etDireccionClientes.getText().toString(),etTelefonoClientes.getText().toString());
             }
         });
        //----------------------------------------------//
@@ -53,12 +51,12 @@ public class Clientes extends AppCompatActivity {
         //----------------------------------------------------------//
     }
 
-    private void guardar(String Nombre, String Cuit, String Direccion, String Fecha, String Telefono){
+    private void guardar(String Nombre, String Cuit, String Direccion, String Telefono){
         BaseHelper helper = new BaseHelper(this,"Demo",null, 1);
         SQLiteDatabase db = helper.getWritableDatabase();
 
         //fecha
-         Fecha = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+         String Fecha = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 
         try {
             ContentValues c = new ContentValues();
