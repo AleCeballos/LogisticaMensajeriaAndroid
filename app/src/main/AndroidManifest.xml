@@ -9,12 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ModificarClientes"></activity>
+
+        <activity android:name=".EditarEmpleado" />
+        <activity android:name=".DetalleEmpleado" />
+        <activity android:name=".ListadoEmpleados" />
+        <activity android:name=".AgregarVerEmpleados" />
+        <activity android:name=".ModificarClientes" />
         <activity android:name=".ListadoClientes" />
         <activity android:name=".AbmClientes" />
         <activity android:name=".Viajes" />
-        <activity android:name=".Empleados" />
-        <activity android:name=".Clientes" />
+        <activity android:name=".EmpleadosForm" />
+        <activity android:name=".ClientesForm" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

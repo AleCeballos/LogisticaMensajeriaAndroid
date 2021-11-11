@@ -10,10 +10,16 @@ import androidx.annotation.Nullable;
 public class BaseHelper extends SQLiteOpenHelper {
 
    //CREO LA TABLA CLIENTES
-    String tabla = "CREATE TABLE CLIENTES (ID INTEGER PRIMARY KEY, NOMBRE TEXT, CUIT TEXT, DIRECCION TEXT, FECHA TEXT, TELEFONO TEXT)";
+    String tabla = "CREATE TABLE CLIENTES (ID INTEGER PRIMARY KEY, NOMBRE TEXT, CUIT TEXT, DIRECCION TEXT, FECHA TEXT, TELEFONO TEXT) ";
+
+    //CREO LA TABLA EMPLEADOS
+    String tabla2 = "CREATE TABLE EMPLEADOS (ID INTEGER PRIMARY KEY, NOMBRE TEXT, CUIT TEXT, DIRECCION TEXT, FECHA TEXT, TELEFONO TEXT)";
+
+
     public BaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
+
 
 
 
@@ -26,5 +32,10 @@ public class BaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table clientes");
         db.execSQL(tabla);
+
+
     }
+
+
+
 }

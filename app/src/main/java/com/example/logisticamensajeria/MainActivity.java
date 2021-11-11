@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnEmpleados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,Empleados.class);
+                Intent i = new Intent(MainActivity.this, AgregarVerEmpleados.class);
                 startActivity(i);
             }
         });

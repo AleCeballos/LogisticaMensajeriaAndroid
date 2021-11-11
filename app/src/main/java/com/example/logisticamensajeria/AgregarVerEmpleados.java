@@ -8,37 +8,45 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class AbmClientes extends AppCompatActivity {
+public class AgregarVerEmpleados extends AppCompatActivity {
 
-    Button btnVerClientes, btnAgregarClientes;
+    Button btnVerEmpleados,btnAgregarEmpleados;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_abm_clientes);
+        setContentView(R.layout.activity_abm_empleados);
 
 
 
-        btnVerClientes = (Button) findViewById(R.id.btnVerClientes);
-        btnAgregarClientes = (Button) findViewById(R.id.btnAgregarClientes);
 
 
 
-        //-----------Abro ventana ABM clientes-------------//
-        btnAgregarClientes.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+        btnVerEmpleados = (Button) findViewById(R.id.btnVerEmpleados);
+        btnAgregarEmpleados = (Button) findViewById(R.id.btnAgregarEmpleados);
+
+
+
+        //-----------Abro ventana ABM empleados-------------//
+        btnAgregarEmpleados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AbmClientes.this, ClientesForm.class);
+                Intent i = new Intent(AgregarVerEmpleados.this, EmpleadosForm.class);
                 startActivity(i);
             }
         });
 
-        //-----------Abro ventana Listado clientes-------------//
-        btnVerClientes.setOnClickListener(new View.OnClickListener() {
+        //-----------Abro ventana Listado empleados-------------//
+        btnVerEmpleados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AbmClientes.this,ListadoClientes.class);
+                Intent i = new Intent(AgregarVerEmpleados.this,ListadoEmpleados.class);
                 startActivity(i);
             }
         });
@@ -52,6 +60,7 @@ public class AbmClientes extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         //----------------------------------------------------------//
+
     }
 
     //SI APRETO EL BOTON ATRAS CIERRO EL ACTIVITY

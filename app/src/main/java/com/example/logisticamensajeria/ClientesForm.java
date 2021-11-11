@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Clientes extends AppCompatActivity {
+public class ClientesForm extends AppCompatActivity {
 
     EditText etNombreClientes, etCuitClientes, etDireccionClientes, etAltaClientes, etTelefonoClientes;
     Button btnGuardarClientes;
@@ -22,7 +22,7 @@ public class Clientes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clientes);
+        setContentView(R.layout.activity_clientes_form);
 
         etNombreClientes = (EditText) findViewById(R.id.etNombreClientes);
         etCuitClientes = (EditText) findViewById(R.id.etCuitClientes);
