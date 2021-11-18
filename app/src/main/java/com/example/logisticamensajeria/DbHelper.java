@@ -11,11 +11,13 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1 ;
     private static final  String DATABASE_NOMBRE = "agenda.db";
     public static final String TABLE_EMPLEADOS ="t_empleados";
+    public static final String TABLE_CLIENTES ="t_clientes";
     public DbHelper(@Nullable Context context){
         super (context, DATABASE_NOMBRE, null, DATABASE_VERSION);
+
+
+
     }
-
-
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -29,6 +31,22 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
             );
+
+
+            //--------CREAR TABLA CLIENTES
+
+        db.execSQL("CREATE TABLE " + TABLE_CLIENTES + "(" +
+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombre TEXT NOT NULL," +
+                "cuit TEXT NOT NULL," +
+                "direccion TEXT NOT NULL," +
+                "fecha TEXT NOT NULL," +
+                "telefono TEXT NOT NULL)"
+
+
+        );
+
     }
 
     @Override
@@ -36,5 +54,10 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE "+ TABLE_EMPLEADOS);
         onCreate(db);
 
+        db.execSQL("DROP TABLE "+ TABLE_CLIENTES);
+        onCreate(db);
+
     }
+
+
 }

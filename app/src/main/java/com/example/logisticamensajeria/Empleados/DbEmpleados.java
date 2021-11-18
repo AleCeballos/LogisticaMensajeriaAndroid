@@ -1,4 +1,4 @@
-package com.example.logisticamensajeria;
+package com.example.logisticamensajeria.Empleados;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.example.logisticamensajeria.DbHelper;
 import com.example.logisticamensajeria.Entidades.Empleados;
 
 import java.text.SimpleDateFormat;

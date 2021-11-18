@@ -1,12 +1,14 @@
-package com.example.logisticamensajeria;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.logisticamensajeria.Empleados;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.logisticamensajeria.R;
 
 public class AgregarVerEmpleados extends AppCompatActivity {
 
@@ -16,16 +18,7 @@ public class AgregarVerEmpleados extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_abm_empleados);
-
-
-
-
-
-
-
-
-
+        setContentView(R.layout.activity_agregar_ver_empleados);
 
 
         btnVerEmpleados = (Button) findViewById(R.id.btnVerEmpleados);
@@ -46,7 +39,7 @@ public class AgregarVerEmpleados extends AppCompatActivity {
         btnVerEmpleados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AgregarVerEmpleados.this,ListadoEmpleados.class);
+                Intent i = new Intent(AgregarVerEmpleados.this, ListadoEmpleados.class);
                 startActivity(i);
             }
         });

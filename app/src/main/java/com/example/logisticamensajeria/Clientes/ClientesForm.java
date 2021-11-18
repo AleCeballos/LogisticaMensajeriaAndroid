@@ -1,9 +1,7 @@
-package com.example.logisticamensajeria;
+package com.example.logisticamensajeria.Clientes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import com.example.logisticamensajeria.Empleados.DbEmpleados;
+import com.example.logisticamensajeria.Empleados.EmpleadosForm;
+import com.example.logisticamensajeria.R;
 public class ClientesForm extends AppCompatActivity {
 
     EditText etNombreClientes, etCuitClientes, etDireccionClientes, etAltaClientes, etTelefonoClientes;
@@ -28,18 +26,28 @@ public class ClientesForm extends AppCompatActivity {
         etCuitClientes = (EditText) findViewById(R.id.etCuitClientes);
         etDireccionClientes = (EditText) findViewById(R.id.etDireccionClientes);
         etTelefonoClientes = (EditText) findViewById(R.id.etTelefonoClientes);
-        btnGuardarClientes = (Button) findViewById(R.id.btnModificarClientes);
+        btnGuardarClientes = (Button) findViewById(R.id.btnGuardarClientes);
 
         //------------------EJECUTO METODO PARA GUARDAR A TRAVES DE BOTON-----------------------------//
         btnGuardarClientes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardar(etNombreClientes.getText().toString(), etCuitClientes.getText().toString(),etDireccionClientes.getText().toString(),etTelefonoClientes.getText().toString());
+
+                DbClientes dbClientes = new DbClientes(ClientesForm.this);
+                long id = dbClientes.insertarCliente(etNombreClientes.getText().toString(), etCuitClientes.getText().toString(),etDireccionClientes.getText().toString(),etTelefonoClientes.getText().toString());
+
+
+                if(id > 0){
+
+                    Toast.makeText(ClientesForm.this, "Cliente Guardado", Toast.LENGTH_LONG).show();
+                    limpiar();
+                } else {
+
+                    Toast.makeText(ClientesForm.this, "Error al guardar", Toast.LENGTH_LONG).show();
+                }
             }
         });
-       //----------------------------------------------//
-
-
+        //----------------------------------------------//
 
         //AGREGO EL BOTON DE REGRESAR
         //----------------------------------------------------------//
@@ -51,27 +59,8 @@ public class ClientesForm extends AppCompatActivity {
         //----------------------------------------------------------//
     }
 
-    private void guardar(String Nombre, String Cuit, String Direccion, String Telefono){
-        BaseHelper helper = new BaseHelper(this,"Demo",null, 1);
-        SQLiteDatabase db = helper.getWritableDatabase();
 
-        //fecha
-         String Fecha = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
 
-        try {
-            ContentValues c = new ContentValues();
-            c.put("Nombre",Nombre);
-            c.put("Cuit",Cuit);
-            c.put("Direccion",Direccion);
-            c.put("Fecha",Fecha);
-            c.put("Telefono",Telefono);
-            db.insert("CLIENTES",null, c);
-            db.close();
-            Toast.makeText(this,"Cliente Ingresado",Toast.LENGTH_SHORT).show();
-        }catch (Exception e){
-            Toast.makeText(this,"Error: " +e.getMessage(),Toast.LENGTH_SHORT).show();
-        }
-    }
 
     //SI APRETO EL BOTON ATRAS CIERRO EL ACTIVITY
     @Override
@@ -85,4 +74,14 @@ public class ClientesForm extends AppCompatActivity {
     }
 
     //-------------------------------------/
-}
+
+    //----Limpio el formulario
+    private void limpiar (){
+
+        etNombreClientes.setText("");
+        etCuitClientes.setText("");
+        etDireccionClientes.setText("");
+        etTelefonoClientes.setText("");
+
+    }
+    }

@@ -1,9 +1,7 @@
-package com.example.logisticamensajeria;
+package com.example.logisticamensajeria.Empleados;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.example.logisticamensajeria.R;
 
 public class EmpleadosForm extends AppCompatActivity {
 
@@ -43,11 +40,11 @@ public class EmpleadosForm extends AppCompatActivity {
 
                 if(id > 0){
 
-                    Toast.makeText(EmpleadosForm.this, "Resgistro Guardado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EmpleadosForm.this, "Empleado Guardado", Toast.LENGTH_LONG).show();
                     limpiar();
                 } else {
 
-                    Toast.makeText(EmpleadosForm.this, "Error al guardar Resgistro ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EmpleadosForm.this, "Error al guardar", Toast.LENGTH_LONG).show();
                 }
             }
         });

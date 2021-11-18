@@ -1,7 +1,4 @@
-package com.example.logisticamensajeria;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.logisticamensajeria.Empleados;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,7 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.logisticamensajeria.Entidades.Empleados;
+import com.example.logisticamensajeria.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DetalleEmpleado extends AppCompatActivity {
@@ -54,7 +55,7 @@ public class DetalleEmpleado extends AppCompatActivity {
 
         }
 
-      final   DbEmpleados dbEmpleados = new DbEmpleados( DetalleEmpleado.this);
+      final DbEmpleados dbEmpleados = new DbEmpleados( DetalleEmpleado.this);
         empleados = dbEmpleados.modificarEmpleados(id);
 
         if(empleados != null ){

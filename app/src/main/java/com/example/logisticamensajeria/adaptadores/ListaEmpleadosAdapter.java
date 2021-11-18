@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.logisticamensajeria.Entidades.Empleados;
-import com.example.logisticamensajeria.DetalleEmpleado;
+import com.example.logisticamensajeria.Empleados.DetalleEmpleado;
 import com.example.logisticamensajeria.R;
 
 import java.util.ArrayList;

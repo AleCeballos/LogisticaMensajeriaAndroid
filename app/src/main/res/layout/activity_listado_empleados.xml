@@ -4,14 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListadoEmpleados">
+    tools:context=".Empleados.ListadoEmpleados">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listadoEmpleados"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-
-
-       />
+        android:background="#FFFFFF" />
 </LinearLayout>

@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.logisticamensajeria.Clientes.AgregarVerClientes;
+import com.example.logisticamensajeria.Empleados.AgregarVerEmpleados;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btnViajes, btnClientes, btnEmpleados, btnFacturacion;
@@ -25,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
         btnClientes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,AbmClientes.class);
-                startActivity(i);
+                Intent i = new Intent(MainActivity.this, AgregarVerClientes.class);
+               startActivity(i);
             }
-        });
+       });
 
         //-----------Abro ventana ABM Empleados-------------//
         btnEmpleados.setOnClickListener(new View.OnClickListener() {
@@ -47,10 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
-
-
 
     }
 }

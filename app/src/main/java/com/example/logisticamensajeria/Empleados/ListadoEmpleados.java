@@ -1,12 +1,13 @@
-package com.example.logisticamensajeria;
+package com.example.logisticamensajeria.Empleados;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
 import com.example.logisticamensajeria.Entidades.Empleados;
+import com.example.logisticamensajeria.R;
 import com.example.logisticamensajeria.adaptadores.ListaEmpleadosAdapter;
 
 import java.util.ArrayList;
