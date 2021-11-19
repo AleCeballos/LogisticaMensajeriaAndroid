@@ -1,14 +1,15 @@
 package com.example.logisticamensajeria;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.logisticamensajeria.Clientes.AgregarVerClientes;
 import com.example.logisticamensajeria.Empleados.AgregarVerEmpleados;
+import com.example.logisticamensajeria.Viajes.AgregarVerViajes;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btnViajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,Viajes.class);
+                Intent i = new Intent(MainActivity.this, AgregarVerViajes.class);
                 startActivity(i);
             }
         });

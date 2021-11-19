@@ -9,11 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Clientes.DetalleCliente"></activity>
+        <activity android:name=".Viajes.EditarViaje"></activity>
+        <activity android:name=".Viajes.DetalleViaje" />
+        <activity android:name=".Viajes.ListadoViajes" />
+        <activity android:name=".Viajes.ViajesForm" />
+        <activity android:name=".Viajes.AgregarVerViajes" />
+
+        <activity android:name=".Clientes.DetalleCliente" />
         <activity android:name=".Clientes.ClientesForm" />
         <activity android:name=".Clientes.ListadoClientes" />
         <activity android:name=".Clientes.AgregarVerClientes" />
         <activity android:name=".Clientes.EditarCliente" />
+
         <activity android:name=".Empleados.EditarEmpleado" />
         <activity android:name=".Empleados.DetalleEmpleado" />
         <activity android:name=".Empleados.ListadoEmpleados" />

@@ -12,6 +12,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final  String DATABASE_NOMBRE = "agenda.db";
     public static final String TABLE_EMPLEADOS ="t_empleados";
     public static final String TABLE_CLIENTES ="t_clientes";
+    public static final String TABLE_VIAJES ="t_viajes";
     public DbHelper(@Nullable Context context){
         super (context, DATABASE_NOMBRE, null, DATABASE_VERSION);
 
@@ -47,6 +48,22 @@ public class DbHelper extends SQLiteOpenHelper {
 
         );
 
+
+
+        //--------CREAR TABLA CLIENTES
+
+        db.execSQL("CREATE TABLE " + TABLE_VIAJES + "(" +
+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "direccion TEXT NOT NULL," +
+                "localidad TEXT NOT NULL," +
+                "precio TEXT NOT NULL," +
+                "fecha TEXT NOT NULL," +
+                "cliente TEXT NOT NULL," +
+                "empleado TEXT NOT NULL)"
+
+
+        );
     }
 
     @Override
@@ -55,6 +72,9 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL("DROP TABLE "+ TABLE_CLIENTES);
+        onCreate(db);
+
+        db.execSQL("DROP TABLE "+ TABLE_VIAJES);
         onCreate(db);
 
     }
